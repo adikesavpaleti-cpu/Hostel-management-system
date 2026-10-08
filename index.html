@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hostel Management System - College Campus Portal</title>
+  <meta name="description" content="Comprehensive College Hostel Management System for managing hostel rooms, resident student allocations, fee collection in Indian Rupees ₹, maintenance complaints, and security gate passes." />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- App Header -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="brand-logo" id="brandLogo">
+          <!-- Logo Icon Injected -->
+        </div>
+        <div>
+          <div class="brand-title">CAMPUS HOSTEL MANAGEMENT</div>
+          <div class="brand-subtitle">COLLEGE OPERATIONS DESK</div>
+        </div>
+      </div>
+
+      <div class="header-search">
+        <span id="searchIcon"></span>
+        <input type="text" id="globalSearchInput" placeholder="Search residents, roll no, room..." oninput="window.app.handleSearchInput(this.value)" />
+      </div>
+
+      <div class="header-actions">
+        <!-- Persona Switcher -->
+        <div class="persona-switcher">
+          <button class="persona-btn active" id="wardenPersonaBtn" onclick="window.app.switchPersona('warden')">
+            <span>🛡️ Warden Admin</span>
+          </button>
+          <button class="persona-btn" id="studentPersonaBtn" onclick="window.app.switchPersona('student')">
+            <span>👨‍🎓 Student View</span>
+          </button>
+        </div>
+
+        <button class="btn btn-secondary btn-sm" onclick="window.app.resetData()" title="Reset Demo Data">
+          <span id="refreshIcon"></span> Reset Demo
+        </button>
+      </div>
+    </header>
+
+    <!-- App Body Main -->
+    <div class="app-main">
+      
+      <!-- Sidebar Navigation -->
+      <aside class="app-sidebar" id="appSidebar">
+        <!-- Sidebar injected via main.js -->
+      </aside>
+
+      <!-- Content Area -->
+      <main class="content-area" id="mainContent">
+        <!-- Rendered view injected here -->
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Modal Overlay Container -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box" id="modalBox">
+      <!-- Dynamic Modal Content -->
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main JavaScript App Orchestrator -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
